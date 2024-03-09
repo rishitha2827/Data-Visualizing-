@@ -1,4 +1,4 @@
-# Data-Visualizing-
-This data visualizing software is built using java
+# Montly Calculator-
+This calculator is built using basic HTML, CSS, JS
 <br>
 Author- P. Rishitha Rani
