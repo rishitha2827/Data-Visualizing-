@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue and Expenses Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('C:/Users/vizag/Downloads/Vizag Water world Logo_page-0001.jpg'); /* Adjust the path based on your file structure */
+            background-size: cover;
+            background-position: center center; /* Adjust the position to center at the bottom */
+            background-repeat: repeat;
+        }
+        input, button {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <h1>Revenue and Expenses Calculator</h1>
+
+    <label for="revenue">Enter Total Revenue:</label>
+    <input type="number" id="revenue" placeholder="Enter Total Revenue">
+
+    <label for="expenses">Enter Expenses:</label>
+    <input type="number" id="expenses" placeholder="Enter Expenses">
+
+    <button onclick="calculate()">Calculate</button>
+
+    <h2>Results:</h2>
+    <p id="revenues"></p>
+    <p id="expense"></p>
+    <p id="afterExpenses"></p>
+    <p id="opEx"></p>
+    <p id="profit"></p>
+    <p id="fullShare"></p>
+    <p id="halfShare"></p>
+    <p id="thirdShare"></p>
+    <p id="fourthShare"></p>
+    <p id="onePointFiveOpEx"></p>
+    <p id="oneOpEx"></p>
+
+    <script>
+        function calculate() {
+            var revenue = parseInt(document.getElementById('revenue').value);
+            var expenses = parseInt(document.getElementById('expenses').value);
+            
+            var revenues=revenue;
+            var expense=expenses;
+            var afterExpenses = revenue - expenses;
+            var opEx = Math.ceil(afterExpenses / 10);
+            var profit = Math.ceil(afterExpenses * 9 / 10);
+            var fullShare = Math.ceil(profit / 12);
+            var halfShare = Math.ceil(profit / 24);
+            var thirdShare = Math.ceil(profit / 36);
+            var fourthShare = Math.ceil(profit / 48);
+            var onePointFiveOpEx = Math.ceil(opEx * 15 / 100);
+            var oneOpEx = Math.ceil(opEx *10/ 100);
+
+            document.getElementById('revenues').innerText='Revenues: '+revenue;
+            document.getElementById('expense').innerText='Expenses: '+expense;
+            document.getElementById('afterExpenses').innerText = 'After Expenses: '+afterExpenses;
+            document.getElementById('opEx').innerText = '10% OpEx: '+opEx;
+            document.getElementById('profit').innerText = 'Profit: ' + profit;
+            document.getElementById('fullShare').innerText = 'Full Share: ' + fullShare;
+            document.getElementById('halfShare').innerText = 'Half Share: ' + halfShare;
+            document.getElementById('thirdShare').innerText = '1/3rd Share: ' + thirdShare;
+            document.getElementById('fourthShare').innerText = '1/4th Share: ' + fourthShare;
+            document.getElementById('onePointFiveOpEx').innerText = '1.5 on OpEx: ' + onePointFiveOpEx;
+            document.getElementById('oneOpEx').innerText = '1 on OpEx: ' + oneOpEx;
+        }
+    </script>
+
+</body>
+</html>
